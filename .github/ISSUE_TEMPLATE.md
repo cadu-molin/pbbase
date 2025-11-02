@@ -1,0 +1,3 @@
+- [ ] Minha primeira tarefa pendente
+- [ ] Outra coisa a ser feita
+- [ ] Uma tarefa já concluída
