@@ -13,8 +13,8 @@ table(column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=tb_i
  column=(type=char(45) updatewhereclause=yes name=tb_produto_pro_descricao dbname="tb_produto.pro_descricao" )
  column=(type=decimal(2) updatewhereclause=yes name=tb_produto_pro_valor dbname="tb_produto.pro_valor" )
  column=(type=long updatewhereclause=yes name=tb_produto_pro_quantidade dbname="tb_produto.pro_quantidade" )
- column=(type=decimal(0) updatewhereclause=yes name=tb_vendas_ven_codigo dbname="tb_vendas.ven_codigo" )
  column=(type=char(1) updatewhereclause=yes name=flageditar dbname="flageditar" )
+ column=(type=decimal(0) updatewhereclause=yes name=tb_vendas_ven_codigo dbname="tb_vendas.ven_codigo" )
  column=(type=char(1) updatewhereclause=yes name=btn_produto dbname="btn_produto" )
  retrieve="  SELECT dba.tb_itens.ite_codigo,   
          dba.tb_itens.ite_quantidade,   
@@ -57,4 +57,3 @@ export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
 import.xml()
 export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
 export.xhtml()
- 

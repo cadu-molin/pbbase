@@ -57,17 +57,24 @@ event activate;call super::activate;w_ancestor iw_this
 
 iw_this = This
 
-If ParentWindow().Dynamic of_getwindowativa() = iw_this Then Return
+If ParentWindow().Dynamic of_getwindowativa() = iw_this Then
+	GOTO Retorno
+End If
 	
 ParentWindow().Dynamic of_set_window( this )
  
 im_edit = ParentWindow().Dynamic of_get_menu()
 
-If is_estado = '' Then of_set_estado( 'VIL' )
+If is_estado = '' Then
+	of_set_estado( 'VIL' )
+End If
+
 im_edit.of_enable( is_estado )
 
 tab_vendas.tabpage_emitir.of_set_menu( Ref im_edit )
 
+Retorno:
+	messageBox(gs_sistema, "Exemplo do GOTO")
 end event
 
 event deactivate;call super::deactivate;w_ancestor lw_null

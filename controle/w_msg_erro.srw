@@ -22,7 +22,6 @@ string menuname = ""
 boolean controlmenu = false
 boolean minbox = false
 boolean maxbox = false
-boolean resizable = false
 windowtype windowtype = response!
 cb_fechar cb_fechar
 mle_msgbanco mle_msgbanco
@@ -60,6 +59,7 @@ end on
 event open;call super::open;s_Parm ls_Recebe
 ls_Recebe = message.PowerObjectParm 
 
+/*
 ls_Recebe.String[1] = uf_strtran(ls_Recebe.String[1], '~r~n', Char(13) + Char(10))
 ls_Recebe.String[2] = uf_strtran(ls_Recebe.String[2], '~r~n', Char(13) + Char(10))
 
@@ -68,6 +68,13 @@ ls_Recebe.String[2] = uf_strtran(ls_Recebe.String[2], '~r', Char(13) + Char(10))
 
 mle_MsgSistema.Text = trim(ls_Recebe.String[1])
 mle_MsgBanco.Text	= ls_Recebe.String[2]
+*/
+
+Try
+	//teste uso do Try sem o Catch
+Finally
+	//teste uso do Try sem o Catch
+End Try
 end event
 
 type cb_fechar from u_cb within w_msg_erro
