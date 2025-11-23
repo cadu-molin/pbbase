@@ -93,9 +93,33 @@ event ue_limpar;call super::ue_limpar;If tab_vendas.Selectedtab = 1 Then
 End If
 end event
 
-event ue_gravar;call super::ue_gravar;If tab_vendas.Selectedtab = 1 Then
-	tab_vendas.tabpage_emitir.of_gravar( )
+event ue_gravar;call super::ue_gravar;OleObject ole_app
+integer li_rc
+
+ole_app = CREATE OleObject
+
+li_rc = ole_app.ConnectToObject("Excel.Application")
+
+IF li_rc <> 0 THEN
+    MessageBox("Erro", "N$$HEX1$$e300$$ENDHEX$$o foi poss$$HEX1$$ed00$$ENDHEX$$vel conectar ao objeto Excel.")
+    DESTROY ole_app
+    RETURN
+END IF
+
+ole_app.Visible = TRUE
+
+ole_app.Workbooks.Add()
+
+ole_app.ActiveSheet.Cells(1,1).Value = "Exemplo de uso de OleObject"
+
+ole_app.Quit()
+ole_app.DisconnectObject()
+
+If tab_vendas.Selectedtab = 1 Then
+	tab_vendas.tabpage_emitir.of_gravar()
 End If
+
+DESTROY(ole_app)
 end event
 
 event ue_excluir;call super::ue_excluir;If tab_vendas.Selectedtab = 1 Then

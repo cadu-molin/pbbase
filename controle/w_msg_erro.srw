@@ -70,11 +70,11 @@ mle_MsgSistema.Text = trim(ls_Recebe.String[1])
 mle_MsgBanco.Text	= ls_Recebe.String[2]
 */
 
-Try
-	//teste uso do Try sem o Catch
-Finally
-	//teste uso do Try sem o Catch
-End Try
+TRY
+    integer li_x = Integer("abc")
+FINALLY
+    MessageBox("Aviso", "Execu$$HEX2$$e700e300$$ENDHEX$$o finalizada.")
+END TRY
 end event
 
 type cb_fechar from u_cb within w_msg_erro
